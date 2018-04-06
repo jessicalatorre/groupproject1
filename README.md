@@ -11,15 +11,13 @@ APIs: YouTube and Wikipedia
 Additional Libraries: Bootstrap or other CSS Libraries & Moment
 
 ## Breakdown of Roles:
-###
+
 **Backend (JavaScript, JSON, AJAX)**
-Jeff Swafford: - API Call 
-Jessica La Torre: Event Listeners
+- Jeff Swafford: API Calls
+- Jessica La Torre - Event Listener
   
-###
 **Frontend (HTML, CSS, Bootstrap):**
-John Bassili (format containers and display windows in main page area to show videos and artist description) 
-Frey Lingle:  nav bar and user input area
+John Bassili - format containers and display windows in main page area to show videos and artist description) & Frey Lingle -  nav bar and user input area
 
 ## Demo
 ![main index page sketh](https://github.com/jessicalatorre/groupproject1/blob/master/Assets/Images/design_draft.jpg)
