@@ -13,13 +13,11 @@ Additional Libraries: Bootstrap or other CSS Libraries & Moment
 Breakdown of Roles:
 Backend (JavaScript, JSON, AJAX)
   (1) Jeff Swafford: - API Call 
-  
   (2) Jessica La Torre: Event Listeners
   
 Frontend (HTML, CSS, Bootstrap)
 
   (3) John Bassili: format containers and display windows in main page area to show videos and artist info and or photos, etc       (HTML, CSS, Bootstrap)
-  
   (4) Frey Lingle:  nav bar and user input area
 
 ## Demo
