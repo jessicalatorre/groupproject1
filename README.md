@@ -10,7 +10,7 @@ Team Members: Jessica La Torre, Jeff Swafford, John Bassili, and Frey Lingle
 APIs: YouTube and Wikipedia
 Additional Libraries: Bootstrap or other CSS Libraries & Moment
 
-Breakdown of Roles:
+## Breakdown of Roles:
 Backend (JavaScript, JSON, AJAX)
   (1) Jeff Swafford: - API Call 
   (2) Jessica La Torre: Event Listeners
