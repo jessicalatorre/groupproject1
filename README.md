@@ -10,7 +10,7 @@ Description: We will create an app to explore new music and artists. Users will 
 **- APIs:** YouTube and Wikipedia
 **- Additional Libraries:** Bootstrap or other CSS Libraries & Moment
 
-## Breakdown of Roles:
+## Breakdown of Roles
 
 **Backend (JavaScript, JSON, AJAX)**
 - Jeff Swafford: API Calls
