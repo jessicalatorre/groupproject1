@@ -7,7 +7,7 @@ Description: We will create an app to explore new music and artists. Users will 
 
 **Team Members:** Jessica La Torre, Jeff Swafford, John Bassili, and Frey Lingle
 
-**- APIs:** YouTube and Wikipedia
+**- APIs:** YouTube and AllMusic
 **- Additional Libraries:** Bootstrap or other CSS Libraries & Moment
 
 ## Breakdown of Roles
