@@ -1,4 +1,4 @@
-// Jessica's event listeners for the submit button
+// test comment// Jessica's event listeners for the submit button
 
 //NOTE: Dummy array name until I learn what Jeff is using
 var arrayName = [];
