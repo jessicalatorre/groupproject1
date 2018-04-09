@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="Assets/Javascript/app.js"></script>
 </head>
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,9 +32,53 @@
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Band/Artist</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type=" button">Search Band/Artist</button>
           </form>
         </div>
       </nav>
+
+
+<!--START DELETE FOR JEFF'S CODE HERE-->
+      <div class="jumbotron Omega Remix text-center">
+          <h1><kbd>Omega Remix</kbd></h1>
+           <h4>The hottest search engine to find the artists and music you love!</h4> 
+      </div>
+      <!-- Column for Artists images -->
+      <div class="container text-center">
+         <div class="row">
+            <div class="col-lg-6 bg-light">
+            <h3>Artist images</h3>
+            <!-- <img class="img-responsive" src="****.jpg" alt="Artist Image" width="460" height="345">  -->
+         </div>
+        <!-- column for content about artist -->
+         <div class="col-lg-6 bg-light">
+            <h3>About artist</h3>
+            <p>Text</p>
+            <p></p>
+        </div>
+      </div>
+    <!-- </div> -->
+
+    <!-- Columns for Artist videos -->
+    <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col-lg-6 bg-light">
+            <h3>Artist videos</h3>        
+              <div class="embed-responsive embed-responsive-4by3">
+               <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe> -->
+              </div>
+        </div>
+      </div>
+    </div>
+<button id="execute-request-button">Authorize</button>
+ 
+<!--END DELETE oF JEFF'S -->
+
+<!-- Jeff: needed to get to YouTube Api -->
+   <script async defer src="https://apis.google.com/js/api.js" 
+        onload="this.onload=function(){};handleClientLoad()" 
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+<!-- Jeff: End of needed to get to YouTube API -->
 </body>
 </html>
