@@ -1,4 +1,26 @@
+
 //JEFF: inital variables
+
+
+// JESSICA: Beginning of onclick Event
+function registerUserInput() {
+  //QUESTION: Is it best to create a new ID dynamically instead of using Boostrap class?
+  $('.form-control').on('click', 'button.submit', function (event) { 
+      // $('.form-control').empty();//empty values stored in div
+      // event.preventDefault();//don't need event listener since we're changed form submit to button
+      console.log("button clicked");
+      var newArtist = $('.form-control').val().trim();
+      artistsReturned.push(artist);
+      //need to add data attr 'search-name' either dynamically or in html
+      var newArtist = $(this).data('search-name');
+      console.log(arrayName);
+      //QUESTION: Query show be in onclick event, so Youtube vid will display when button.submit clicked?
+
+  });
+  // JESSICA: End of Event Listenmer
+
+
+
 const lastfmAPIKey = "878cd030f66bc70392b2e867264d9bcd";
 const youtubeAPIKey = "AIzaSyDTk3_LURGAY8IgkxkywQ-XP2kXW4NMbYI";
 const numYouTubeResultsPerArtist = 5;
