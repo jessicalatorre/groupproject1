@@ -3,7 +3,7 @@
 
 
 // JESSICA: Beginning of onclick Event
-function registerUserInput() {
+//function registerUserInput() {
   //QUESTION: Is it best to create a new ID dynamically instead of using Boostrap class?
   $('.form-control').on('click', 'button.submit', function (event) { 
       // $('.form-control').empty();//empty values stored in div
@@ -33,20 +33,22 @@ var artistsReturned = [];
 
 //Last.FM ajax call for similar artist
 //JEFF prototype things
-SimilarArtist.prototype = {
+var SimilarArtist = Class.create({
 	initialize: function(name, bio,images,videos){
 		this.name = name;
 		this.bio = bio;
 		this.images = images;
 		this.videos = videos;
-	}
-}
-Artist.prototype = {
+	},
+});
+var Artist = Class.create({
 	initialize: function(name, similarArtists){
 		this.name = name;
 		this.similarArtists = similarArtists;
-	}
-}
+	},
+});
+
+
 //JEFF: End Prototype things
 
 
@@ -62,6 +64,8 @@ $.ajax({
 	method: "GET",
 }).then(function(response){
 	console.log(response);
+	searchedArtist = new Artist(artist, response.similar.artist);
+	console.log(searchedArtist);
 	getSimilarArtists(response.artist.similar.artist);
 	
 });
