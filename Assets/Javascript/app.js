@@ -4,23 +4,28 @@ const numYouTubeResultsPerArtist = 5;
 var testResults = [];
 var artist = "Grimes";
 var artistsReturned = [];
+var searchedArtist;
+var similarArtistsNames = [];
+
+
 //JEFF End Initial Variables
 //Last.FM ajax call for similar artist
 //JEFF prototype things; work in progress
-// SimilarArtist.prototype = {
-//     initialize: function (name, bio, images, videos) {
-//         this.name = name;
-//         this.bio = bio;
-//         this.images = images;
-//         this.videos = videos;
-//     }
-// }
-// Artist.prototype = {
-//     initialize: function (name, similarArtists) {
-//         this.name = name;
-//         this.similarArtists = similarArtists;
-//     }
-// }
+var  SimilarArtist = Class.create({
+    initialize: function (name, bio, images, videos){
+        this.name = name;
+        this.bio = bio;
+        this.images = images;
+        this.videos = videos;
+    },
+});
+var Artist = Class.create({
+    initialize: function (name, similarArtists){
+        this.name = name;
+        this.similarArtists = similarArtists;
+    },
+});
+
 //JEFF: End Prototype things
 //  JESSICA: Beginning of onclick Event
     jQuery(document).on('click', '#submitButton', function(){
@@ -40,23 +45,52 @@ var artistsReturned = [];
             method: "GET",
         }).then(function (response) {
             console.log(response);
-            
-            getSimilarArtists(response.artist.similar.artist);
+
+           similarArtistsNames = getSimilarArtists(response.artist.similar.artist);
+           
         });
     });
     //JEFF: END LASTFM AJAX CALL
+
+
+function getSimilarArtistElements(artist){
+	jQuery.ajax({
+		 url: "http://ws.audioscrobbler.com/2.0/?",
+         data: {
+                method: "artist.getinfo",
+                artist: artist,
+                api_key: lastfmAPIKey,
+                format: "json",
+         },
+         method: "GET",
+        }).then(function (response) {
+
+
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
+
     //JEFF: MISC FUNCTIONS
     function getSimilarArtists(artistsArray) {
         artistsReturned = [];
         for (var i = 0; i < artistsArray.length; i++) {
             artistsReturned.push(artistsArray[i].name);
         }
-        var bioLoaded = false;
-        var numToLoad = artistsReturned.length;
-        for (var i = 0; i < artistsReturned.length; i++) {
-            getVideoIds(artistsReturned[i]);
-        }
+        // for (var i = 0; i < artistsReturned.length; i++) {
+        //     getVideoIds(artistsReturned[i]);
+        // }
         console.log(artistsReturned);
+        return artistsReturned;
     }
     //JEFF: END MISC FUNCTIONS
     var yTresults = [];
