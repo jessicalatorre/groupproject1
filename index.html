@@ -7,7 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <link rel="stylesheet" href="Assets/css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
   <script src="Assets/Javascript/app.js"></script>
 </head>
@@ -45,6 +45,81 @@
     </h1>
     <h4>The hottest search engine to find the artists and music you love!</h4>
   </div>
+  <!-- JOHN BEGIN OF ACCORDIAN -->
+  <div id= "searchResults" >
+      <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Artist #1
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body"><img class="img-responsive" src="../Images/cds.jpg" alt="Artist Image" width="460" height="345"><br>
+        PULL CONTENT ON ARTIST HERE!
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Artis #2
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body"><img class="img-responsive" src="****.jpg" alt="Artist Image" width="460" height="345"><br> 
+        PULL CONTENT ON ARTIST HERE!
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Artist #3
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body"><img class="img-responsive" src="****.jpg" alt="Artist Image" width="460" height="345"><br>
+        PULL CONTENT ON ARTIST HERE!
+      </div>
+    </div>
+  </div>
+<div class="card">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Artist #4
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+      <div class="card-body"><img class="img-responsive" src="****.jpg" alt="Artist Image" width="460" height="345"><br>
+        PULL CONTENT ON ARTIST HERE!
+      </div>
+    </div>
+  </div>
+<div class="card">
+    <div class="card-header" id="headingFive">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Artist #5
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+      <div class="card-body"><img class="img-responsive" src="index/Images/cds.jpg" alt="Artist Image" width="460" height="345"><br>
+        PULL CONTENT ON ARTIST HERE!
+      </div>
+    </div>
+  </div>
+  </div>
+<!-- JOHN:END OF ACCORDIAN  -->
   <!-- Column for Artists images -->
   <div class="container text-center">
     <div class="row">
@@ -71,6 +146,15 @@
       </div>
     </div>
   </div>
+         <!-- Latest jquery link -->    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!--BOOTSTRAP 4.0 LINKS  -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- BOOTSTRAP 3.0 AND 4.0 JavaScript -->
+
+
   <!--END DELETE oF JEFF'S -->
 </body>
 </html>
