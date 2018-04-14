@@ -6,16 +6,17 @@ var artist = "Grimes";
 var artistsReturned = [];
 var searchedArtist;
 var similarArtistsNames = [];
+
 var JQr = $.noConflict();
 
 //JEFF End Initial Variables
 //Last.FM ajax call for similar artist
 //JEFF prototype things; work in progress
 var  SimilarArtist = Class.create({
-    initialize: function (name, bio, images, videos){
+    initialize: function (name, bio, image, videos){
         this.name = name;
         this.bio = bio;
-        this.images = images;
+        this.image = image;
         this.videos = videos;
     },
     print: function (){
@@ -33,7 +34,7 @@ var Artist = Class.create({
 //  JESSICA: Beginning of onclick Event
     $(document).on('click', '#submitButton', function(){
         console.log("button clicked");
-        artist = jQuery('#userSearch').val().trim();
+        artist = JQr('#userSearch').val().trim();
         console.log(artist);
         //JESSICA: End of onclick Event
         //JEFF: LAST.FM AJAX CALL
@@ -41,6 +42,7 @@ var Artist = Class.create({
             url: "http://ws.audioscrobbler.com/2.0/?",
             data: {
                 method: "artist.getinfo",
+                autocorrect: 1;
                 artist: artist,
                 api_key: lastfmAPIKey,
                 format: "json",
@@ -50,6 +52,7 @@ var Artist = Class.create({
             console.log(response);
 
            similarArtistsNames = getSimilarArtists(response.artist.similar.artist);
+
            getSimilarArtistElements(similarArtistsNames[0]);
         });
     });
@@ -72,7 +75,7 @@ function getSimilarArtistElements(artist){
             url: 'https://www.googleapis.com/youtube/v3/search?',
             data: {
                 part: 'snippet',
-                q: artist,
+                q: artist + " band",
                 type: 'video',
                 maxResults: numYouTubeResultsPerArtist,
                 videoCategoryId: '10', //sets category to music only
@@ -83,11 +86,15 @@ function getSimilarArtistElements(artist){
         }).then(function (response) {
             console.log(response);
 
-        var simArtist = new SimilarArtist(artist, lastFMResponse.artist.bio.content, getArtistImages(lastFMResponse), getVideoIds(response));
+        var simArtist = new SimilarArtist(artist, lastFMResponse.artist.bio.summary, getArtistImages(lastFMResponse), getVideoIds(response));
         console.log(simArtist);
         simArtist.print();
         console.log("KILROY WAS HERE");
 
+//         var testVid = JQr("<iframe>");
+// testVid.addClass("embed-responsive-item");
+// testVid.attr("src","https://www.youtube.com/embed/" + simArtist.videos[0]);
+// JQr("#collapseFive").append(testVid);
 
 	});
 });
@@ -104,7 +111,7 @@ function getSimilarArtistElements(artist){
 		for(var i=0;i<5;i++){
 			artistImages.push(response.artist.image[i]["#text"]);
 		}
-		return artistImages;
+		return artistImages[4];
 	}
 
 
@@ -132,5 +139,8 @@ function getSimilarArtistElements(artist){
             console.log(videoids);
             return videoids;
         };
+
+
+
     
 //JEFF: END YOUTUBE API
