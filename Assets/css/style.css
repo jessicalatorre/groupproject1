@@ -1,2 +1,10 @@
-style.css
+.band-image {
+    width: 100%;
+}
+
+.band-vid {
+    width: 410px;
+    height: 300px;
+    margin: 5px;
+}
 
