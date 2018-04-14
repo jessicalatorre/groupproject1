@@ -42,7 +42,7 @@ var Artist = Class.create({
             url: "http://ws.audioscrobbler.com/2.0/?",
             data: {
                 method: "artist.getinfo",
-                autocorrect: 1;
+                autocorrect: 1,
                 artist: artist,
                 api_key: lastfmAPIKey,
                 format: "json",
@@ -90,6 +90,8 @@ function getSimilarArtistElements(artist){
         console.log(simArtist);
         simArtist.print();
         console.log("KILROY WAS HERE");
+         // Here is where Jessica needs to cb the renderInner function
+         renderInner(simArtist);
 
 //         var testVid = JQr("<iframe>");
 // testVid.addClass("embed-responsive-item");
@@ -144,3 +146,23 @@ function getSimilarArtistElements(artist){
 
     
 //JEFF: END YOUTUBE API
+
+// JESSICA'S CODE: Adding bank photo and elements dynamically
+//create divs where all the videos and pictures will be rendered for each artist card
+function renderInner (similarObject) {
+    var target = JQr('#insertHere');
+    target.empty();
+    //create divs where all the videos and pictures will be rendered for each artist card
+    var bandImages = JQr('<div>');
+    // dynamically create attr for artist images
+    var bandPhoto = JQr('<img>');
+    //img src attribute
+    bandPhoto.attr('src', similarObject.image);
+    bandPhoto.addClass('image');
+    bandImages.append(bandPhoto);
+    //this will append to the insertHere ID
+    var bandbio = JQr('<p>').html("Bio: " + similarObject.bio + "</br>" + "<p><strong><i>content courtesy of Last.fm</i></strong></p>");
+    //can append two parameters at once: band images and bio
+    target.append(bandImages, bandbio);
+    
+}
