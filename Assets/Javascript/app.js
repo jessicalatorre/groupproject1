@@ -33,23 +33,24 @@ var Artist = Class.create({
 //JEFF: End Prototype things
 
 //JESSICA: Event Listener for onkey
-//Press Enter event listener
-// JQr('#userSearch').keypress(function (event) {                                      
-//     if (event.KeyCode == 13) {
-//          event.preventDefault();
-//          //do something  
-//          JQr("#submitButton").click();
-//     }
+//Press Enter Key to submit user input
 
-//     var input = document.getElementById("movieInput");
-// input.addEventListener("keyup", enter);
+        function enter () {
+            event.preventDefault;
+                if (event.keycode === 13) { // ASCII code for ENTER key is "13"
+                JQr('#submit-button').click(); // Submit form code
+                }
+            }
+   //trying to capture user input on keyup when ENTER pressed on keyboard. Console log doesn't return user input yet         
+        var newInput = JQr('#user-search');
+        newInput.on('keyup', enter);
+        console.log("Pressing Enter Submits User Input: " + newInput);
 
-// });
 
 //  JESSICA: Beginning of onclick Event
-$(document).on('click', '#submitButton', function () {
+JQr(document).on('click', '#submit-button', function () {
     console.log("button clicked haha");
-    artist = JQr('#userSearch').val().trim();
+    artist = JQr('#user-search').val().trim();
     console.log(artist);
     //JESSICA: End of onclick Event
     //JEFF: LAST.FM AJAX CALL
@@ -249,5 +250,3 @@ function renderInner(similarObject) {
     firstRow.append(bandImages, bandBio);
     insertHere.append(firstRow, secondRow); //cool! remember this, Jessica
 }
-
-
