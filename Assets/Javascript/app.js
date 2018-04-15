@@ -42,7 +42,7 @@ var Artist = Class.create({
             url: "http://ws.audioscrobbler.com/2.0/?",
             data: {
                 method: "artist.getinfo",
-                autocorrect: 1;
+                autocorrect: 1,
                 artist: artist,
                 api_key: lastfmAPIKey,
                 format: "json",
