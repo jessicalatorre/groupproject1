@@ -34,6 +34,17 @@ var Artist = Class.create({
 
 //JESSICA: Event Listener for onkey
 //Press Enter Key to submit user input
+function enter () {
+    event.preventDefault;
+        if (event.keycode === 13) { // ASCII code for ENTER key is "13"
+        JQr('#submitButton').click(); // Submit form code
+        }
+    }
+//trying to capture user input on keyup when ENTER pressed on keyboard. Console log doesn't return user input yet         
+var newInput = JQr('#userSearch');
+newInput.on('keyup', enter);
+console.log("Pressing Enter Submits User Input: " + newInput);
+
 
 function enter () {
     event.preventDefault;
@@ -47,7 +58,7 @@ newInput.on('keyup', enter);
 console.log("Pressing Enter Submits User Input: " + newInput);
 
 //  JESSICA: Beginning of onclick Event
-$(document).on('click', '#submitButton', function () {
+JQr(document).on('click', '#submitButton', function () {
     console.log("button clicked haha");
     artist = JQr('#userSearch').val().trim();
     console.log(artist);
@@ -68,8 +79,9 @@ $(document).on('click', '#submitButton', function () {
 
         similarArtistsNames = getSimilarArtists(response.artist.similar.artist);
         renderAccordion(similarArtistsNames);
-        getSimilarArtistElements(similarArtistsNames[0]);
+        getSimilarArtistElements(similarArtistsNames[0], JQr('#card-body0'));
     });
+
 });
 
 //JESSICA: new onlcick needs to cb getSimilarArtistElements (AJAX CAlL!) and renderInner function (Vid and Bio elements!)
@@ -77,7 +89,7 @@ $(document).on('click', '#submitButton', function () {
 //JEFF: END LASTFM AJAX CALL
 
 
-function getSimilarArtistElements(artist) {
+function getSimilarArtistElements(artist, target) {
     JQr.ajax({
         url: "http://ws.audioscrobbler.com/2.0/?",
         data: {
@@ -109,7 +121,7 @@ function getSimilarArtistElements(artist) {
             simArtist.print();
             console.log("KILROY WAS HERE");
             // Here is where Jessica needs to cb the renderInner function
-            renderInner(simArtist);
+            renderInner(simArtist, target);
 
             //         var testVid = JQr("<iframe>");
             // testVid.addClass("embed-responsive-item");
@@ -184,6 +196,7 @@ function renderAccordion(similarArtists) {
         newcardheader.append(h5);
         var button = JQr("<button>");
         button.addClass("btn btn-link");
+        button.addClass('recommendation-button');
         button.attr("data-toggle", "collapse");
         button.attr("data-target", "#collapse" + i);
         button.attr("data-index", i);
@@ -201,17 +214,18 @@ function renderAccordion(similarArtists) {
         newCard.append(collapseOne);
         var newcardbody = JQr("<div>");
         newcardbody.addClass("card-body", "img-responsive");
-        // newcardbody.attr("");
+        newcardbody.attr("id", "card-body"+i);
         collapseOne.append(newcardbody);
+        
     }
+    JQr('#searchResults').empty();
     JQr("#searchResults").append(newResultsDiv);
     //JEFF: END YOUTUBE API
 }
 
 // JESSICA & JEFF'S CODE: Adding band photo and elements dynamically
 //render content for each artist card
-function renderInner(similarObject) {
-    var insertHere = JQr('#insertHere');
+function renderInner(similarObject, insertHere) {
     insertHere.empty(); //empty div
 
     //create divs for Row 1 fand Row 2 within each artist card.
@@ -219,6 +233,7 @@ function renderInner(similarObject) {
     //add firstRow for band image and bio
     var firstRow = JQr('<div>');
     firstRow.addClass('row');
+    firstRow.attr('id', 'first-row');
 
     //adding band image firstRow
     var bandImages = JQr('<div>');
@@ -237,6 +252,7 @@ function renderInner(similarObject) {
     // add video to artist acordion
     var secondRow = JQr('<div>');
     secondRow.addClass('row');
+    secondRow.attr('id', 'second-row');
 
     for (var i = 0; i < similarObject.videos.length; i++) {
         var testVid = JQr("<iframe>");
@@ -249,3 +265,9 @@ function renderInner(similarObject) {
     firstRow.append(bandImages, bandBio);
     insertHere.append(firstRow, secondRow); //cool! remember this, Jessica
 }
+
+JQr('#searchResults').on('click', '.recommendation-button', function () {
+    var index = parseInt(JQr(this).attr("data-index")); //parse index from string to number
+    console.log("index" + index);
+    getSimilarArtistElements(similarArtistsNames[index], JQr('#card-body'+ index));
+});
