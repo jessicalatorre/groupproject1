@@ -52,10 +52,8 @@ console.log("Pressing Enter Submits User Input: " + newInput);
 
 //  JESSICA: Beginning of onclick Event
 JQr(document).on('click', '#submitButton', function () {
-	findArtist(JQr('#userSearch').val().trim());
     console.log("button clicked haha");
-});
-    function findArtist(artist){
+    artist = JQr('#userSearch').val().trim();
     console.log(artist);
     //JESSICA: End of onclick Event
     //JEFF: LAST.FM AJAX CALL
@@ -77,7 +75,7 @@ JQr(document).on('click', '#submitButton', function () {
         getSimilarArtistElements(similarArtistsNames[0], JQr('#card-body0'));
     });
 
-}
+});
 
 //JESSICA: new onlcick needs to cb getSimilarArtistElements (AJAX CAlL!) and renderInner function (Vid and Bio elements!)
 
@@ -256,23 +254,13 @@ function renderInner(similarObject, insertHere) {
         testVid.attr("src", "https://www.youtube.com/embed/" + similarObject.videos[i]);
         secondRow.append(testVid);
     }
-    var thirdRow = JQr("<div>");
-    thirdRow.addClass("row");
-    var artistsLikeThisButton = JQr("<button>");
-    artistsLikeThisButton.addClass("btn btn-default artists-like-this-btn");
-    artistsLikeThisButton.attr("data-artist", similarObject.name);
-    artistsLikeThisButton.html("<span class=\"glyphicon glyphicon-search\" aria-hidden=\"true\"></span>" + "Search for Similar Artists");
-    thirdRow.append(artistsLikeThisButton);
     //can append two parameters at once: band images and bio to insertHere Div
     firstRow.append(bandImages, bandBio);
-    insertHere.append(firstRow, secondRow, thirdRow); //cool! remember this, Jessica
+    insertHere.append(firstRow, secondRow); //cool! remember this, Jessica
 }
-JQr('#searchResults').on("click",".artists-like-this-btn",function(){
-	findArtist(JQr(this).attr("data-artist"));
-});
+
 JQr('#searchResults').on('click', '.recommendation-button', function () {
     var index = parseInt(JQr(this).attr("data-index")); //parse index from string to number
     console.log("index" + index);
     getSimilarArtistElements(similarArtistsNames[index], JQr('#card-body'+ index));
-
 });
