@@ -3,6 +3,19 @@
     src:url('impact-labelimport');
 } */
 
+body {
+    background-color: #222;
+
+}
+
+.jumbotron {
+    background-image: url("../Images/jumbotronbackground.jpg");
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
 .btn-link {
     text-decoration-line: none;
     /* font-family: impact-labelimport; */
