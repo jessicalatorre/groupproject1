@@ -1,3 +1,66 @@
+/* @font-face {
+    font-family: impact-label;
+    src:url('impact-labelimport');
+} */
+
+.btn-link {
+    text-decoration-line: none;
+    /* font-family: impact-labelimport; */
+    border: 1px solid #9999;
+    border-radius: 15px 5px 5px 5px;
+    border-bottom-color: rgb(33, 26, 26);
+    padding: .1em .5em .1em 1em;
+    display: inline-block;
+    color: #ffff;
+    font-family: monospace;
+    font-size: 1.5em;
+    letter-spacing: .5em;
+    text-shadow:
+    /*inner*/ 0 0 1px #000,
+    /*top*/   0 -2px 1px #aaa,
+    /*right*/ 2px 0 1px #aaa,
+    /*botom*/ 0 2px 0 #666,
+    /*left*/ -2px 0 1px #aaa;
+    background-color: #3333;
+    background-image: linear-gradient(rgb(0, 0, 0), #333333);
+    box-shadow: 0 1px 1px #666; 
+}
+
+.btn-link:link {
+    text-decoration-line: none;
+}
+
+.btn-link:active {
+    text-decoration-line: none;
+}
+
+.btn-link:visited {
+    text-decoration-line: none;
+}
+
+.btn-link:hover {
+    text-decoration-line: none;
+    /* font-family: impact-labelimport; */
+    border: 1px solid #9999;
+    border-radius: 15px 5px 5px 5px;
+    border-bottom-color: rgb(33, 26, 26);
+    padding: .1em .5em .1em 1em;
+    display: inline-block;
+    color: #ffff;
+    font-family: monospace;
+    font-size: 1.5em;
+    letter-spacing: .5em;
+    text-shadow:
+    /*inner*/ 0 0 1px #000,
+    /*top*/   0 -2px 1px #aaa,
+    /*right*/ 2px 0 1px #aaa,
+    /*botom*/ 0 2px 0 #666,
+    /*left*/ -2px 0 1px #aaa;
+    background-color: #3333;
+    background-image: linear-gradient(rgb(0, 0, 0), #333333);
+    box-shadow: 0 1px 1px #666; 
+}
+
 .band-image {
     width: 100%;
 }
@@ -15,3 +78,21 @@
 #fist-row {
     margin-left: 12px;
 }
+
+.card-header:first-child{
+    /*border: 2px solid black;*/
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    background: white;
+    border-top-left-radius: 20px;    
+    
+    }
+
+.card-body{
+    color: #eeeeee;
+    background: #333333;
+    border-left: 2px solid #222222;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    }
