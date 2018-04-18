@@ -58,7 +58,7 @@ JQr(document).on('click', '#submitButton', function () {
     //JESSICA: End of onclick Event
     //JEFF: LAST.FM AJAX CALL
     JQr.ajax({
-        url: "http://ws.audioscrobbler.com/2.0/?",
+        url: "https://ws.audioscrobbler.com/2.0/?",
         data: {
             method: "artist.getinfo",
             autocorrect: 1,
@@ -84,7 +84,7 @@ JQr(document).on('click', '#submitButton', function () {
 
 function getSimilarArtistElements(artist, target) {
     JQr.ajax({
-        url: "http://ws.audioscrobbler.com/2.0/?",
+        url: "https://ws.audioscrobbler.com/2.0/?",
         data: {
             method: "artist.getinfo",
             artist: artist,
