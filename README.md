@@ -1,7 +1,7 @@
 # Omega Remix
 A search engine to find the artists and music you love!
 
-# Team Members:
+## Team Members
 - Jessica La Torre
 - Jeff Swafford
 - John Bassili
